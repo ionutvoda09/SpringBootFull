@@ -35,6 +35,10 @@ public class Employee {
     @Column
     private Boolean isHired;
 
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    @JoinColumn(name = "company_id")
+    private Company company;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 
@@ -123,5 +127,13 @@ public class Employee {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }

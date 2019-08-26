@@ -17,6 +17,7 @@ public class EmployeeDetailDto {
     private String phone;
     private Long personalNumericCode;
     private Boolean isHired;
+    private Integer companyId;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -93,6 +94,14 @@ public class EmployeeDetailDto {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 
     public LocalDateTime getUpdatedAt() {
