@@ -1,7 +1,10 @@
 package com.spring.training.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class EmployeeSummaryDto {
 
+    @NotNull
     private Integer id;
     private String firstName;
     private String lastName;

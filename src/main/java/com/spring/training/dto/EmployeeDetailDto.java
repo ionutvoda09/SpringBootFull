@@ -3,6 +3,7 @@ package com.spring.training.dto;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 public class EmployeeDetailDto {
 
@@ -18,6 +19,7 @@ public class EmployeeDetailDto {
     private Long personalNumericCode;
     private Boolean isHired;
     private Integer companyId;
+    private Set<ProjectDto> projects;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -110,5 +112,13 @@ public class EmployeeDetailDto {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Set<ProjectDto> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Set<ProjectDto> projects) {
+        this.projects = projects;
     }
 }
