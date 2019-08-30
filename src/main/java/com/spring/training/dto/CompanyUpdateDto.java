@@ -5,6 +5,7 @@ import java.util.Optional;
 
 public class CompanyUpdateDto {
 
+    @NotNull
     private Integer id;
 
     private Optional<String> name;

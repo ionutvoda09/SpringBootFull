@@ -1,6 +1,8 @@
 package com.spring.training.dto;
 
 import javax.validation.constraints.NotNull;
+import java.time.LocalDateTime;
+import java.util.Set;
 
 public class CompanyDetailDto {
 
@@ -14,10 +16,11 @@ public class CompanyDetailDto {
 
     @NotNull
     private String address;
-
     private String phoneNumber;
-
     private String email;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private Set<Integer> employees;
 
     public Integer getId() {
         return id;
@@ -65,5 +68,29 @@ public class CompanyDetailDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public Set<Integer> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Set<Integer> employees) {
+        this.employees = employees;
     }
 }

@@ -35,7 +35,7 @@ public class Employee {
     @Column
     private Boolean isHired;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "company_id")
     private Company company;
 

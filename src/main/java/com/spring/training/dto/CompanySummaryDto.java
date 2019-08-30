@@ -6,10 +6,8 @@ public class CompanySummaryDto {
 
     private Integer id;
 
-    @NotNull
     private String name;
 
-    @NotNull
     private String registrationNumber;
 
     public Integer getId() {
