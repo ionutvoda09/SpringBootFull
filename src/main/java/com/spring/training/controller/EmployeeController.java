@@ -57,4 +57,12 @@ public class EmployeeController {
                 new ResponseEntity(updatedEmployee, HttpStatus.OK) : new ResponseEntity("id not found", HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("/show/{id}")
+    public ResponseEntity<Optional<EmployeeDetailDto>> findById(@PathVariable @NotNull Integer id){
+        Optional<EmployeeDetailDto> response = service.findById(id);
+
+        return response.isPresent() ?
+                new ResponseEntity<>(response, HttpStatus.OK) : new ResponseEntity("id not found", HttpStatus.NOT_FOUND);
+    }
+
 }

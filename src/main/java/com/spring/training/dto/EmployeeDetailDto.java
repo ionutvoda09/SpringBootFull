@@ -1,6 +1,9 @@
 package com.spring.training.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.spring.training.model.Salary;
+
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.Set;
@@ -20,6 +23,9 @@ public class EmployeeDetailDto {
     private Boolean isHired;
     private Integer companyId;
     private Set<ProjectDto> projects;
+
+    @JsonManagedReference
+    private SalaryDto salary;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -120,5 +126,13 @@ public class EmployeeDetailDto {
 
     public void setProjects(Set<ProjectDto> projects) {
         this.projects = projects;
+    }
+
+    public SalaryDto getSalary() {
+        return salary;
+    }
+
+    public void setSalary(SalaryDto salary) {
+        this.salary = salary;
     }
 }

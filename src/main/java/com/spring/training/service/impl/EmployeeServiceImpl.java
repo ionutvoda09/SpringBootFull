@@ -76,7 +76,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Optional<EmployeeDetailDto> findById(Integer id) {
-        return Optional.ofNullable(modelMapper.map(repository.findById(id), EmployeeDetailDto.class));
+        return Optional.ofNullable(modelMapper.map(repository.findById(id).get(), EmployeeDetailDto.class));
     }
 
     //This method convert a list of Employee Entity to a list of EmployeeSummary

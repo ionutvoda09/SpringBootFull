@@ -48,6 +48,10 @@ public class Employee {
             inverseJoinColumns = @JoinColumn(name = "project_id"))
     private Set<Project> projects = new HashSet<>();
 
+    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, optional = false)
+    private Salary salary;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 
@@ -148,5 +152,13 @@ public class Employee {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Salary getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Salary salary) {
+        this.salary = salary;
     }
 }
