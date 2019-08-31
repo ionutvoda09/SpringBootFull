@@ -1,5 +1,6 @@
 package com.spring.training.service.impl;
 
+import com.spring.training.component.Bill;
 import com.spring.training.dto.EmployeeSummaryDto;
 import com.spring.training.dto.ProjectDto;
 import com.spring.training.model.Employee;
@@ -23,17 +24,20 @@ public class ProjectServiceImpl implements ProjectService{
     private ProjectRepository projectRepository;
     private EmployeeRepository employeeRepository;
     private ModelMapper modelMapper;
+    private Bill bill;
 
     @Autowired
-    public ProjectServiceImpl(ProjectRepository projectRepository, EmployeeRepository employeeRepository, ModelMapper mapper) {
+    public ProjectServiceImpl(ProjectRepository projectRepository, EmployeeRepository employeeRepository, ModelMapper mapper, Bill bill) {
         this.projectRepository = projectRepository;
         this.modelMapper = mapper;
         this.employeeRepository = employeeRepository;
+        this.bill = bill;
     }
 
     @Override
     public ProjectDto create(ProjectDto projectDto) {
         Project entity = modelMapper.map(projectDto, Project.class);
+        System.out.println(">>>>>>>>>>>>>>"+ bill.getBill());
         return modelMapper.map(projectRepository.save(entity), ProjectDto.class);
     }
 
