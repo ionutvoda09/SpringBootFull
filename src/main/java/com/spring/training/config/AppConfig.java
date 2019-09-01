@@ -1,6 +1,6 @@
 package com.spring.training.config;
 
-import com.spring.training.component.Bill;
+import com.spring.training.components.Bill;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

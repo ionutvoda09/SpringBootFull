@@ -1,6 +1,6 @@
 package com.spring.training.service.impl;
 
-import com.spring.training.component.Bill;
+import com.spring.training.components.Bill;
 import com.spring.training.dto.EmployeeSummaryDto;
 import com.spring.training.dto.ProjectDto;
 import com.spring.training.model.Employee;
@@ -37,7 +37,7 @@ public class ProjectServiceImpl implements ProjectService{
     @Override
     public ProjectDto create(ProjectDto projectDto) {
         Project entity = modelMapper.map(projectDto, Project.class);
-        System.out.println(">>>>>>>>>>>>>>"+ bill.getBill());
+        bill.billingService(projectDto.getProjectName());
         return modelMapper.map(projectRepository.save(entity), ProjectDto.class);
     }
 
