@@ -1,11 +1,15 @@
 package com.spring.training.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class EmployeeSummaryDto {
 
+    @NotNull
     private Integer id;
     private String firstName;
     private String lastName;
     private Long personalNumericCode;
+    private Integer companyId;
 
     public EmployeeSummaryDto() {
     }
@@ -40,5 +44,13 @@ public class EmployeeSummaryDto {
 
     public void setPersonalNumericCode(Long personalNumericCode) {
         this.personalNumericCode = personalNumericCode;
+    }
+
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
     }
 }

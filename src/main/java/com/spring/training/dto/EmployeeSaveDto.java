@@ -16,9 +16,7 @@ public class EmployeeSaveDto {
     private Optional<String> phone;
     private Optional<Long> personalNumericCode;
     private Optional<Boolean> isHired;
-
-    public EmployeeSaveDto() {
-    }
+    private Optional<Integer> companyId;
 
     public Integer getId() {
         return id;
@@ -82,5 +80,13 @@ public class EmployeeSaveDto {
 
     public void setIsHired(Optional<Boolean> isHired) {
         this.isHired = isHired;
+    }
+
+    public Optional<Integer> getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Optional<Integer> companyId) {
+        this.companyId = companyId;
     }
 }
