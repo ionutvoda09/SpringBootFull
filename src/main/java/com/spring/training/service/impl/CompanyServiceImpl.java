@@ -4,6 +4,7 @@ import com.spring.training.dto.CompanyDetailDto;
 import com.spring.training.dto.CompanySummaryDto;
 import com.spring.training.dto.CompanyUpdateDto;
 import com.spring.training.model.Company;
+import com.spring.training.model.Employee;
 import com.spring.training.repository.CompanyRepository;
 import com.spring.training.service.CompanyService;
 import com.sun.org.apache.xml.internal.security.utils.JavaUtils;
@@ -116,7 +117,11 @@ public class CompanyServiceImpl implements CompanyService{
             //Initialize list
             dto.setEmployees(new HashSet<>());
             //populate list with each employee ID
-            input.getEmployees().forEach(employee -> dto.getEmployees().add(employee.getId()));
+            //input.getEmployees().forEach(employee -> dto.getEmployees().add(employee.getId()));
+
+            for(Employee employee : input.getEmployees()){
+                dto.getEmployees().add(employee.getId());
+            }
         }
         return dto;
     }

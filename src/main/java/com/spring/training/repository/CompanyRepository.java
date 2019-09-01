@@ -9,6 +9,6 @@ import java.util.Optional;
 
 public interface CompanyRepository extends PagingAndSortingRepository<Company, Integer> {
 
-    @Query("select c from Company c join c.employees e where e.id = :employeeId")
+    @Query("select company from Company company join company.employees employees where employees.id = :employeeId")
     Optional<Company> findByEmployeeID(@Param("employeeId") Integer employeeId);
 }

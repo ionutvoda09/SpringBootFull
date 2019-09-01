@@ -1,6 +1,7 @@
 package com.spring.training.components;
 
-//@Component
+import org.springframework.stereotype.Component;
+
 public class Bill {
 
     private static final String name = "demobill";
